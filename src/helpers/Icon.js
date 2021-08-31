@@ -31,7 +31,7 @@ class Icon {
   }
 
   _bindOnClick() {
-    chrome.browserAction.onClicked.addListener(() => {
+    chrome.action.onClicked.addListener(() => {
       const url = this.onClickUrls[this.currentColor];
       OpenActiveTab(url);
     });
@@ -39,15 +39,15 @@ class Icon {
 
   set(color) {
     this.currentColor = color;
-    chrome.browserAction.setIcon({ path: this.paths[color] });
+    chrome.action.setIcon({ path: this.paths[color] });
   }
 
   setBadgeText(text) {
-    chrome.browserAction.setBadgeText({ text });
+    chrome.action.setBadgeText({ text });
   }
 
   setBadgeBackgroundColor(color) {
-    chrome.browserAction.setBadgeBackgroundColor({ color });
+    chrome.action.setBadgeBackgroundColor({ color });
   }
 }
 
